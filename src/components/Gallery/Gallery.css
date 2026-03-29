@@ -1,0 +1,15 @@
+.gallery-container {
+  padding: 30px 40px;
+}
+
+.gallery-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.gallery-container ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}

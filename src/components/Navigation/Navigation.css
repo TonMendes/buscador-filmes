@@ -1,0 +1,27 @@
+nav {
+  background-color: #1a1a1a;
+  padding: 12px 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #aaa;
+  font-size: 15px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+nav ul li a.active {
+  color: #fff;
+  background-color: #e50914;
+}

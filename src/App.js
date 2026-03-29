@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { MovieProvider } from "./Context/PhotoContext";
+import Header from "./components/Header/Header";
+import Navigation from "./components/Navigation/Navigation";
+import Container from "./components/Container/Container";
+import CategoryContainer from "./components/CategoryContainer/CategoryContainer";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MovieProvider>
+      <BrowserRouter>
+        <Header />
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Navigate to="/search/populares" />} />
+          <Route path="/search/:searchTerm" element={<Container />} />
+          <Route path="/category/:category" element={<CategoryContainer />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </MovieProvider>
   );
 }
 
