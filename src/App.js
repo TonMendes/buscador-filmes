@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { MovieProvider } from "./Context/PhotoContext";
 import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound/NotFound";
 function App() {
   return (
     <MovieProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Navigation />
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/category/:category" element={<CategoryContainer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </MovieProvider>
   );
 }
